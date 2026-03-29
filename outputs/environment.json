@@ -1,0 +1,15 @@
+{
+  "timestamp": "2026-02-07T15:19:58.096798",
+  "python_version": "3.13.2 (tags/v3.13.2:4f8bb39, Feb  4 2025, 15:23:48) [MSC v.1942 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26120-SP0",
+  "packages": {
+    "numpy": "2.2.3",
+    "pandas": "2.2.3",
+    "sklearn": "1.8.0",
+    "lightgbm": "4.6.0",
+    "transformers": "5.1.0",
+    "torch": "2.10.0+cpu",
+    "scipy": "1.15.1",
+    "yaml": "6.0.2"
+  }
+}

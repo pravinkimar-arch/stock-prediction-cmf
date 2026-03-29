@@ -1,0 +1,394 @@
+{
+  "ABB": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "ADANIENSOL": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "ADANIENT": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "ADANIGREEN": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "ADANIPORTS": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "ADANIPOWER": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "AMBUJACEM": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "APOLLOHOSP": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "ASIANPAINT": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "ATGL": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "AXISBANK": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "BAJAJ-AUTO": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "BAJAJFINSV": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "BAJAJHLDNG": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "BAJFINANCE": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "BANKBARODA": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "BEL": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "BHARTIARTL": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "BHEL": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "BOSCHLTD": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "BPCL": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "BRITANNIA": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "CANBK": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "CHOLAFIN": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "CIPLA": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "COALINDIA": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "DABUR": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "DIVISLAB": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "DLF": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "DMART": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "DRREDDY": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "EICHERMOT": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "ENRIN": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "GAIL": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "GODREJCP": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "GRASIM": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "HAL": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "HAVELLS": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "HCLTECH": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "HDFCBANK": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "HDFCLIFE": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "HEROMOTOCO": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "HINDALCO": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "HINDUNILVR": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "HINDZINC": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "HYUNDAI": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "ICICIBANK": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "ICICIGI": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "ICICIPRULI": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "INDHOTEL": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "INDIGO": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "INDUSINDBK": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "INFY": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "IOC": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "IRCTC": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "IRFC": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "ITC": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "JINDALSTEL": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "JIOFIN": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "JSWENERGY": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "JSWSTEEL": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "KOTAKBANK": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "LICI": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "LODHA": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "LT": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "LTIM": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "MARUTI": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "MOTHERSON": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "NAUKRI": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "NESTLEIND": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "NHPC": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "NTPC": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "ONGC": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "PFC": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "PIDILITIND": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "PNB": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "POWERGRID": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "RECLTD": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "RELIANCE": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "SBILIFE": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "SBIN": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "SHREECEM": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "SHRIRAMFIN": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "SIEMENS": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "SOLARINDS": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "SUNPHARMA": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "TATACONSUM": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "TATAPOWER": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "TATASTEEL": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "TCS": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "TECHM": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "TITAN": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "TMPV": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "TORNTPHARM": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "TRENT": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "TVSMOTOR": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "VBL": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  },
+  "VEDL": {
+    "end_date": "2026-01-31",
+    "start_date": "2016-01-01"
+  }
+}

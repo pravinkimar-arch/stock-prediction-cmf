@@ -1,0 +1,230 @@
+# ============================================================
+# Multimodal Stock Prediction Pipeline - Default Configuration
+# ============================================================
+
+# --- Data paths ---
+data:
+  price_data_dir: "price_data/"
+  filings_data_dir: "filings_data/"
+  cache_dir: "cache/"
+  output_dir: "outputs/"
+  # Date range for data loading (10-year lookback)
+  start_date: "2016-01-01"
+  end_date: "2026-01-31"
+
+# --- Universe ---
+# Auto-detected: 98 stocks with both price_data and filings_data
+universe:
+  symbols:
+    - ABB
+    - ADANIENSOL
+    - ADANIENT
+    - ADANIGREEN
+    - ADANIPORTS
+    - ADANIPOWER
+    - AMBUJACEM
+    - APOLLOHOSP
+    - ASIANPAINT
+    - ATGL
+    - AXISBANK
+    - BAJAJ-AUTO
+    - BAJAJFINSV
+    - BAJAJHLDNG
+    - BAJFINANCE
+    - BANKBARODA
+    - BEL
+    - BHARTIARTL
+    - BHEL
+    - BOSCHLTD
+    - BPCL
+    - BRITANNIA
+    - CANBK
+    - CHOLAFIN
+    - CIPLA
+    - COALINDIA
+    - DABUR
+    - DIVISLAB
+    - DLF
+    - DMART
+    - DRREDDY
+    - EICHERMOT
+    - ENRIN
+    - GAIL
+    - GODREJCP
+    - GRASIM
+    - HAL
+    - HAVELLS
+    - HCLTECH
+    - HDFCBANK
+    - HDFCLIFE
+    - HEROMOTOCO
+    - HINDALCO
+    - HINDUNILVR
+    - HINDZINC
+    - HYUNDAI
+    - ICICIBANK
+    - ICICIGI
+    - ICICIPRULI
+    - INDHOTEL
+    - INDIGO
+    - INDUSINDBK
+    - INFY
+    - IOC
+    - IRCTC
+    - IRFC
+    - ITC
+    - JINDALSTEL
+    - JIOFIN
+    - JSWENERGY
+    - JSWSTEEL
+    - KOTAKBANK
+    - LICI
+    - LODHA
+    - LT
+    - LTIM
+    - MARUTI
+    - MOTHERSON
+    - NAUKRI
+    - NESTLEIND
+    - NHPC
+    - NTPC
+    - ONGC
+    - PFC
+    - PIDILITIND
+    - PNB
+    - POWERGRID
+    - RECLTD
+    - RELIANCE
+    - SBILIFE
+    - SBIN
+    - SHREECEM
+    - SHRIRAMFIN
+    - SIEMENS
+    - SOLARINDS
+    - SUNPHARMA
+    - TATACONSUM
+    - TATAPOWER
+    - TATASTEEL
+    - TCS
+    - TECHM
+    - TITAN
+    - TMPV
+    - TORNTPHARM
+    - TRENT
+    - TVSMOTOR
+    - VBL
+    - VEDL
+
+# --- NSE session (IST) ---
+nse_session:
+  timezone: "Asia/Kolkata"
+  market_open: "09:15"
+  market_close: "15:30"
+
+# --- OHLCV column mapping ---
+ohlcv_columns:
+  datetime: "date"
+  open: "open"
+  high: "high"
+  low: "low"
+  close: "close"
+  volume: "volume"
+
+# --- Filings column mapping ---
+filings_columns:
+  symbol: "symbol"
+  timestamp: "timestamp"
+  headline: "subject"
+  body: "pdf_text"
+  body_fallback: "body_text"
+  xbrl: "xbrl_text"
+
+# --- Labels ---
+labels:
+  primary: "next_day_direction"  # binary: log(C_{t+1}/C_t) > 0
+  horizon: 1  # days ahead
+
+# --- Feature engineering ---
+features:
+  # Numeric indicators
+  numeric:
+    log_return_lag: 1
+    atr_window: 14
+    volatility_window: 20
+    ma_short: 5
+    ma_long: 20
+    volume_zscore_window: 20
+
+  # Chart2Tokens
+  chart2tokens:
+    breakout_window: 20
+    gap_atr_threshold: 0.5        # gap must exceed this fraction of ATR
+    volume_burst_multiplier: 3.0
+    volume_burst_norm: "mean"     # "mean" or "median"
+    volume_burst_window: 20
+    round_number_step: 100        # round levels every N rupees
+    round_number_atr_fraction: 0.3  # distance threshold as ATR fraction
+    engulfing_body_ratio: 0.0     # min body ratio (0 = any body)
+
+  # Token summary features
+  token_summary:
+    lookback_W: 20
+    half_life_h: 5.0
+    max_time_since: 60  # cap for time_since_last
+
+  # Text / filings features
+  text:
+    model_name: "ProsusAI/finbert"
+    max_chunk_tokens: 510
+    chunk_overlap_tokens: 50
+    batch_size: 8
+    # Memory features for text signals
+    text_memory_W: 20
+    text_memory_h: 5.0
+
+# --- Walk-forward splits ---
+splits:
+  train_months: 6
+  val_months: 2
+  test_months: 2
+  step_months: 2  # slide forward by this many months (= test_months for non-overlapping test folds)
+  purge_days: 20  # >= max lookback (20); reduced from 25, 5d moved to embargo
+  embargo_days: 5  # extra buffer gap between train and val/test
+
+# --- Models ---
+models:
+  logistic_regression:
+    C: 1.0
+    max_iter: 1000
+    solver: "lbfgs"
+    penalty: "l2"
+
+  lightgbm:
+    n_estimators: 300
+    max_depth: 4
+    learning_rate: 0.05
+    num_leaves: 15
+    min_child_samples: 20
+    subsample: 0.8
+    colsample_bytree: 0.8
+    reg_alpha: 0.1
+    reg_lambda: 0.1
+
+  primary_model: "lightgbm"  # "logistic_regression" or "lightgbm"
+
+# --- Calibration ---
+calibration:
+  method: "platt"  # "platt" or "temperature"
+
+# --- Late fusion ---
+fusion:
+  method: "weighted_average"  # "weighted_average" or "meta_lr"
+
+# --- Sensitivity grid ---
+sensitivity:
+  W_values: [10, 15, 20, 30, 40]
+  h_values: [3.0, 5.0, 7.0, 10.0]
+
+# --- Reproducibility ---
+seed: 42
+log_level: "INFO"
