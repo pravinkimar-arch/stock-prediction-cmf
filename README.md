@@ -11,6 +11,8 @@ Next-day stock direction prediction on NSE (National Stock Exchange of India) la
 
 ## Project Structure
 
+Important Note: Datasets and cache are not included in this repo due to size contraints in GitHub.
+
 ```
 stock-prediction-cmf/
 |
