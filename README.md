@@ -89,7 +89,7 @@ pip install -r requirements.txt
 
 ### Raw data (not included in repo)
 
-- `price_data/`: Minute-level OHLCV CSVs for 98 NSE stocks (4.8 GB). Source: Kaggle "Stock Market Data - Nifty 100 Stocks (1 min)"
+- `price_data/`: Minute-level OHLCV CSVs for 97 NSE stocks (4.8 GB). Source: Kaggle "Stock Market Data - Nifty 100 Stocks (1 min)"
 - `filings_data/`: Corporate governance filings from NSE India, organized by date
 
 ### Cached data (included)
@@ -98,9 +98,9 @@ Pre-computed intermediate artifacts that allow running experiments without raw d
 
 | File | Description |
 |------|-------------|
-| `cache/daily_ohlcv.parquet` | Resampled daily OHLCV (227K rows, 98 symbols) |
+| `cache/daily_ohlcv.parquet` | Resampled daily OHLCV (227K rows, 97 symbols) |
 | `cache/features_all.parquet` | Complete feature matrix with labels |
-| `cache/daily_text_features.parquet` | FinBERT sentiment per symbol/day (25 symbols) |
+| `cache/daily_text_features.parquet` | FinBERT sentiment per symbol/day (97 symbols) |
 | `cache/filings_processed.parquet` | Preprocessed filings with sentiment scores |
 | `cache/sentiment_cache.parquet` | Raw FinBERT scores per filing chunk |
 | `cache/completed_symbols.json` | Tracks which symbols have been processed |
@@ -173,7 +173,7 @@ Alternative target: next-day realized volatility:
 python scripts/exploratory/run_volatility_prediction.py
 ```
 
-### Full pipeline from raw data (optional, ~8 hours for FinBERT)
+### Full pipeline from raw data (optional, ~19 hours for FinBERT)
 
 Only needed if you want to reprocess everything from scratch:
 
@@ -195,8 +195,8 @@ python pipeline/step4_modeling_evaluation.py
 ## Walk-Forward Evaluation
 
 - 6-month training window, 2-month validation, 2-month test
-- 1-month step (sliding forward)
-- 25-day purge + 5-day embargo at train/test boundary
+- 2-month step (sliding forward)
+- 20-day purge + 5-day embargo at train/test boundary
 - Platt calibration fit per fold on validation data only
 - Scaler fit per fold on training data only
 
@@ -204,9 +204,9 @@ python pipeline/step4_modeling_evaluation.py
 
 | Variant | ROC-AUC | PR-AUC | Brier |
 |---------|---------|--------|-------|
-| M1: Numeric-only | 0.520 +/- 0.052 | 0.522 +/- 0.070 | 0.255 |
-| M2: Numeric+Tokens | 0.517 +/- 0.040 | 0.507 +/- 0.062 | 0.257 |
-| M3: TS+Text Fusion | 0.510 +/- 0.043 | 0.502 +/- 0.059 | 0.257 |
+| M1: Numeric-only | 0.5025 +/- 0.0148 | 0.5037 +/- 0.0365 | 0.2516 |
+| M2: Numeric+Tokens | 0.5057 +/- 0.0156 | 0.5051 +/- 0.0344 | 0.2516 |
+| M3: TS+Text Fusion | 0.5055 +/- 0.0134 | 0.5050 +/- 0.0337 | 0.2516 |
 
 No modality provides significant incremental value over the numeric baseline for next-day direction prediction on liquid NSE large-cap equities under walk-forward evaluation.
 
@@ -215,7 +215,7 @@ No modality provides significant incremental value over the numeric baseline for
 1. All rolling features use `shift(1)` -- no current-day data in features
 2. Labels defined as next-day direction: `y[t] = sign(close[t+1] - close[t])`
 3. StandardScaler fit only on training split per fold
-4. Purge (25 days) + embargo (5 days) at train/test boundaries
+4. Purge (20 days) + embargo (5 days) at train/test boundaries
 5. First-seen alignment for filings (post-15:30 IST shifted to next session)
 6. Calibration fit per fold on validation data only
 7. FinBERT is frozen (no fine-tuning on target data)
@@ -229,7 +229,7 @@ All parameters are in `configs/default.yaml`. Key settings:
 train_months: 6
 val_months: 2
 test_months: 2
-purge_days: 25
+purge_days: 20
 embargo_days: 5
 
 # LightGBM
